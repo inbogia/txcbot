@@ -116,7 +116,11 @@ async def xrr(ctx):
 
 @client.command()
 async def kar(ctx):
-    await ctx.send(f':heart: ')
+    await ctx.send(f':heart: kai blasks ')
+
+@client.command()
+async def panoss(ctx):
+    await ctx.send(f':no1 malakas ')
 
 @client.command()
 async def play(ctx, url : str):
