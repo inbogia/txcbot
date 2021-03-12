@@ -3,7 +3,6 @@ from discord.ext import commands
 from discord.utils import get
 import random
 import io
-import youtube_dl
 import os
 from datetime import datetime
 client = commands.Bot(command_prefix= '.')
@@ -164,9 +163,7 @@ async def unmute(ctx: commands.Context, member: discord.Member ):
     await member.remove_roles(muted_role)
     await ctx.send(f"{ctx.author.mention} unmuted {member.mention}" )
 
-@client.command()
-async def mlk(ctx):
-    await ctx.send(f'<@607657777577590795> ksipna malaka')
+
 
 @client.command()
 async def diss(ctx):
