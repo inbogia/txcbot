@@ -4,8 +4,11 @@ from discord.utils import get
 import random
 import io
 import os
+ 
 from datetime import datetime
 client = commands.Bot(command_prefix= '.')
+client.remove_command('help')
+
 
 @client.event
 async def on_ready():
@@ -32,7 +35,7 @@ async def _8ball(ctx, *, question):
 
                  'Yes.', 
 
-                 'rota arhotera.', 
+                 'rota argotera.', 
 
                  'kalitera min sou pw twra.', 
 
@@ -83,19 +86,12 @@ async def cs(ctx):
     await ctx.send(f'<@288048756958691329> Μητσαρα παμε ενα cs')
 
 
-@client.command()
-async def panos(ctx):
-    await ctx.send(f'<@607657777577590795> to tragoudi sou https://www.youtube.com/watch?v=obUHDyWFMi8')
-
-@client.command(aliases=['bet', 'stoixima'])
+@client.command(aliases=['fight', 'pali'])
 async def _bet(ctx, omada1, *,omada2):
-    apan =['aso',
-    'diplo',
-    'xi',
-    'goal-goal',
-    'over',
-    'under']
-    await ctx.send(f'match: {omada1}-{omada2}\nna to paiksis: {random.choice(apan)}') 
+    apan =[omada1 ,
+    omada2,
+    'isopalia']
+    await ctx.send(f'match: {omada1}-{omada2}\nto teliko apotelesma tou agona einai: {random.choice(apan)}') 
 
 @client.command(name="picon", brief="Sends your icon's link")
 async def get_icon(ctx: commands.Context, *, member: discord.Member = None) -> None:
@@ -112,32 +108,11 @@ async def get_icon(ctx: commands.Context, *, member: discord.Member = None) -> N
         await ctx.send(f"{ctx.author.mention}. This member's icon is located at: {url}")
 
 
-@client.command()
-async def xrr(ctx):
-    await ctx.send(f'<@597538447837888512> xronia polla roudis na xairese to onama sou ')
-
 
 @client.command()
-async def kar(ctx):
-    await ctx.send(f':heart: kai blasks ')
+async def kolitos(ctx):
+    await ctx.send(f' gia sou <@&822590182918193192> :blue_heart: ')
 
-@client.command()
-async def panoss(ctx):
-    await ctx.send(f':no1 malakas ')
-
-@client.command()
-async def play(ctx, url : str):
-    song_there = os.path.isfile("song.mp3")
-    try:
-        if song_there:
-            os.remove("song.mp3")
-    except PermissionError:
-        await ctx.send("Wait for the current playing music to end or use the 'stop' command")
-        return
-
-    
-    
- 
 
 @client.command(
     name="mute", brief="Mute a member",
@@ -176,5 +151,69 @@ client.run('your server token')
 @client.command(aliases=['code', 'github'])
 async def _github(ctx):
     await ctx.send(f'https://github.com/inbogia/txcbot')
+
+
+@client.command()
+async def dm(ctx):
+    author = ctx.message.author 
+    embed = discord.Embed(
+        colour= discord.Colour.blurple()
+    )
+    
+    embed.set_author(name ='den eisai asfalis')
+    embed.add_field(name = 'na ksereis se parakoulouthaw', value='-',inline= False)
+
+    await author.send(embed=embed)
+
+
+@client.command(aliases=['toxic', 'toxicguy3'])
+async def _toxic(ctx):
+     
+    await ctx.send(f' http://toxicguy3.ml/?i=1 enjoy')
+
+@client.command()
+async def rules(ctx):
+    author = ctx.message.author 
+
+    embed = discord.Embed(
+        colour= discord.Colour.red()
+    )
+    embed.set_author(name ='Rules')
+    embed.add_field(name = 'Rule #1', value='No spam ',inline= False)
+    embed.add_field(name = 'Rule #2', value='Be respectful',inline= False)
+    embed.add_field(name = 'SE PERIPTWSH PARABISASIS', value='se periptwsh parbiasis tha uparxoun oi analoge timories',inline= False)
+    
+    await ctx.send(embed=embed)
+
+@client.command()
+async def help(ctx):
+    author = ctx.message.author 
+
+    embed = discord.Embed(
+        colour= discord.Colour.orange()
+    )
+
+    embed.set_author(name ='Help')
+    embed.add_field(name = '8ball', value='kaneis mia erwtish kai sou epistrefw mia apantish',inline= False)
+    embed.add_field(name = 'clr', value='diagrafw minimata',inline= False)
+    embed.add_field(name = 'cs', value='tagarw ton mhtso gia na paiksei cs',inline= False)
+    embed.add_field(name = 'diss', value='akou to kalitero diss olwn twn epoxwn',inline= False)
+    embed.add_field(name = 'dm', value='sou stelnw dm',inline= False)
+    embed.add_field(name = 'fight', value='dwse 2 onomata pou tha paiksoun ksilo kai tha sou pw to teliko apotelesma',inline= False)
+    embed.add_field(name = 'github ', value='github link gia na deis pws me eftiaksan',inline= False)
+    embed.add_field(name = 'help', value='deixnei auto to minima',inline= False)
+    embed.add_field(name = 'kalimera ', value='se kalimerizw',inline= False)
+    embed.add_field(name = 'mute', value='mute enan xristh epeidh den ekatse fronima',inline= False)
+    embed.add_field(name = 'kalitos', value='kanw tag tous kolitous mou :blue_heart:',inline= False)
+    embed.add_field(name = 'toxic', value='to kaliterw site olwn ton epoxwn',inline= False)
+    embed.add_field(name = 'picon', value='sou dixnw tin eikona profile enos xristh',inline= False)
+    embed.add_field(name = 'rules', value='kanones tou server pou prepei na akoulouthiseis',inline= False)
+    embed.add_field(name = 'sm', value='bazw slowmode',inline= False)
+    embed.add_field(name = 'unmute', value='kanw unmute kapion',inline= False)
+
+    #await author.send(embed=embed)
+    await ctx.send(embed=embed)
+
+
 client.run('Nzk0NjgxNTYyMTYzMDUyNjA1.X--W4A.oVFU2uf4X4JIIDLxXmiyCQSioIM')
 >>>>>>> cae1427 (good)
