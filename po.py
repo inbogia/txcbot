@@ -1,6 +1,5 @@
 import discord
 import time
-import asyncio
 from discord.ext import commands
 from discord.utils import get
 import random
@@ -8,11 +7,7 @@ import io
 import os
 import textblob
 from gtts import gTTS
- 
-import helpers
 
-
-from datetime import datetime
 client = commands.Bot(command_prefix= '.')
 client.remove_command('help')
 
