@@ -169,4 +169,12 @@ async def unmute(ctx: commands.Context, member: discord.Member ):
 async def diss(ctx):
     await ctx.send(f'<@621247745474428941> https://www.youtube.com/watch?v=yGk1bjE5jAQ&ab_channel=articuno')
 
+<<<<<<< HEAD
 client.run('your server token')
+=======
+
+@client.command(aliases=['code', 'github'])
+async def _github(ctx):
+    await ctx.send(f'https://github.com/inbogia/txcbot')
+client.run('Nzk0NjgxNTYyMTYzMDUyNjA1.X--W4A.oVFU2uf4X4JIIDLxXmiyCQSioIM')
+>>>>>>> cae1427 (good)
